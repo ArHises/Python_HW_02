@@ -31,7 +31,19 @@ import math
 sum = int(input('Enter sum: ')) # = first + second
 product = int(input('Enter product: ')) # = first * second
 
-first = (sum + math.sqrt(sum**2 - 4*product)) / 2
-second = (sum - math.sqrt(sum**2 - 4*product)) / 2
+def first_way(sum, product):
+    first = (sum + math.sqrt(sum**2 - 4*product)) / 2
+    second = (sum - math.sqrt(sum**2 - 4*product)) / 2
 
-print(f'first num: {int(first)} ; second num: {int(second)}')
+    print(f'first num: {int(first)} ; second num: {int(second)}')
+
+# first_way(sum, product)
+
+def second_way(sum, product):
+    for i in range(sum):
+        for j in range(product):
+            if sum == i + j and product == i * j:
+                print(i, j)
+                return
+
+second_way(sum, product)
